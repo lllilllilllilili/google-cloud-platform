@@ -5,4 +5,4 @@ steps:
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
-  args: ["composer", "environments", "run","composer-cluster-name", "--location=your-location","--project=project-ID", "trigger_dag", "--", "AIRFLOW_ID"]
+  args: ["composer", "environments", "run","composer-cluster-name", "--location=asia-northeast3","--project=jungang-poc", "trigger_dag", "--", "AIRFLOW_ID"]
