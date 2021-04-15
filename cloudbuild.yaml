@@ -2,3 +2,7 @@ steps:
 - name: gcr.io/cloud-builders/gsutil
   id: Sync github repo to DAGs folder
   args: ["-m", "rsync", "-r", "-d", "./dags", "gs://asj-test/DAGfolder/in/google/storage"]
+
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args: ["composer", "environments", "run","composer-cluster-name", "--location=your-location","--project=project-ID", "trigger_dag", "--", "AIRFLOW_ID"]
